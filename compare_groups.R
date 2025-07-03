@@ -14,8 +14,8 @@ colnames(s4)[9] <- "Terror"
 ben <- subset(d, Habitat=="Benthic, epifaunal"|Habitat=="Benthic, infaunal"|Habitat=="Benthic"|Habitat=="Benthic, epifaunal to shallow infaunal")
 plan <- subset(d, Habitat!="Benthic, epifaunal"&Habitat!="Benthic, infaunal"&Habitat!="Benthic"&Habitat!="Benthic, epifaunal to shallow infaunal"&`Sample Name`!="CH75-18-16 G MENARDII") #plan
 mixplan <- subset(d, Habitat=="Mixed-layer") #mix plan
-mixben <- subset(d, Habitat!="Mixed-layer"&`Sample Name`!="CH75-18-16 G MENARDII") #mix ben
-epiben <- subset(d, Habitat=="Thermocline"&`Sample Name`!="CH75-18-16 G MENARDII") #Epi Ben
+mixben <- subset(d, Species=="Mixed benthic species") #mix ben
+epiben <- subset(d, Habitat!="Benthic, epifaunal") #Epi Ben
 infraben <- subset(d, Habitat=="Benthic, infaunal") # Infra Ben
 
 #Additional categories from Figure 3
