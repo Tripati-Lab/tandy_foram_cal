@@ -1,0 +1,116 @@
+Publication,Sample Name,Lab,Acid T,N,Δ47 avg,1 s.e.,Growth Temperature (C),Temperature Error (C)
+" Anderson et al., 2021",UWCP14_4C_3,MIT,70,8,0.65,0.01272792,6,0.05
+" Anderson et al., 2021",UWCP14_4C_4,MIT,70,9,0.658,0.012,6,0.05
+" Anderson et al., 2021",UWCP14_8C_2,MIT,70,9,0.633,0.012,9,0.12
+" Anderson et al., 2021",UWCP14_8C_6,MIT,70,9,0.648,0.012,9,0.15
+" Anderson et al., 2021",UWCP14_8C_CA_4,MIT,70,8,0.648,0.01272792,9,0.12
+" Anderson et al., 2021",UWCP14_21C_1,MIT,70,8,0.611,0.01272792,22,0.22
+" Anderson et al., 2021",UWCP14_20C_9,MIT,70,8,0.604,0.01272792,23,0.33
+" Anderson et al., 2021",UWCP14_20C_CA_11,MIT,70,10,0.615,0.0113842,23,0.34
+" Anderson et al., 2021",HT_25C,MIT,70,9,0.61,0.012,25,2
+" Anderson et al., 2021",UWCP14_50C_CA_11,MIT,70,9,0.527,0.012,50,0.74
+"Defliese et al., 2015",5CCalcite1-12-2012,UMichigan,75,4,0.637,0.00297037,5,1
+"Defliese et al., 2015",25CCalcite1-12-2011,UMichigan,75,4,0.589,0.01308577,25,1
+"Defliese et al., 2015",50CCalcite3-24-2014,UMichigan,75,4,0.504,0.00799109,50,1
+"Defliese and Tripati, 2020",5C Calcite',UCLATripati,70/90,12,0.66,0.006,5,0.5
+"Defliese and Tripati, 2020",25C Calcite',UCLATripati,70/90,7,0.6,0.01,25,0.5
+"Jautzy et al., 2020",CA5_05,GeoSurveyCanada,70,21,0.659,0.006,5,0.5
+"Jautzy et al., 2020",CA5_07,GeoSurveyCanada,70,19,0.665,0.007,5,0.5
+"Jautzy et al., 2020",CA25,GeoSurveyCanada,70,24,0.589,0.009,25,0.5
+"Jautzy et al., 2020",CA50,GeoSurveyCanada,70,21,0.535,0.009,50,0.5
+"Kelson et al., 2017",150618_7_4C_Z_3,UW,25/90,3,0.669,0.00998225,4,0.33
+"Kelson et al., 2017",141209_5_UWcp14_4C_2,UW,25/90,6,0.674,0.02262465,6,0.05
+"Kelson et al., 2017",141218_4_UWcp14_4C_1,UW,25/90,5,0.684,0.01515866,6,0.05
+"Kelson et al., 2017",150122_2_4C_4,UW,25/90,3,0.639,0.00996658,6,0.05
+"Kelson et al., 2017",150122_7_4C_3,UW,25/90,3,0.652,0.00201866,6,0.05
+"Kelson et al., 2017",150309_2_4C_5,UW,25/90,3,0.656,0.01670016,6,0.05
+"Kelson et al., 2017",150422_7_4C_6,UW,25/90,2,0.684,0.00432,6,0.05
+"Kelson et al., 2017",141209_8_UWcp14_8C_2,UW,25/90,3,0.663,0.02071418,9,0.12
+"Kelson et al., 2017",141212_5_UWcp14_8C_3,UW,25/90,3,0.652,0.01405223,9,0.12
+"Kelson et al., 2017",150205_8_8C_CA_4,UW,25/90,2,0.644,0.006245,9,0.12
+"Kelson et al., 2017",150212_6_8C_1,UW,25/90,3,0.668,0.00729719,9,0.12
+"Kelson et al., 2017",150601_8_8C_6,UW,25/90,2,0.675,0.001725,9,0.15
+"Kelson et al., 2017",150309_7_8C_CA_5,UW,25/90,3,0.662,0.00856297,13,0.12
+"Kelson et al., 2017",150410_3_20C_Z_15,UW,25/90,4,0.648,0.00672045,20,1.45
+"Kelson et al., 2017",150212_7_20C_G_14,UW,25/90,2,0.606,0.005655,21,0.49
+"Kelson et al., 2017",140522_3_UWcp14_21C_1,UW,25/90,6,0.612,0.00831805,22,0.22
+"Kelson et al., 2017",150601_4_20C_Z_2,UW,25/90,3,0.626,0.0146582,22,0.17
+"Kelson et al., 2017",140804_3_UWcp14_20C_9,UW,25/90,7,0.606,0.00849479,23,0.33
+"Kelson et al., 2017",140813_6_UWcp14_20C_CA_11,UW,25/90,3,0.627,0.009186,23,0.34
+"Kelson et al., 2017",150410_6_20C_CA_16,UW,25/90,4,0.654,0.00916003,23,0.42
+"Kelson et al., 2017",140625_1_UWcp14_24C_CA_1,UW,25/90,3,0.594,0.00831628,24,0.76
+"Kelson et al., 2017",140807_11_UWcp14_20C_10,UW,25/90,3,0.598,0.00420661,24,0.43
+"Kelson et al., 2017",150122_5_20C_CA_13,UW,25/90,5,0.619,0.00544819,24,1.03
+"Kelson et al., 2017",141210_3_UWcp14_20C_DS,UW,25/90,3,0.624,0.00928199,26,0.73
+"Kelson et al., 2017",140723_7_UWcp14_40C_1,UW,25/90,3,0.538,0.01195501,43,1.46
+"Kelson et al., 2017",140516_2_UWcp14_50C_1,UW,25/90,6,0.56,0.01408721,47,0.36
+"Kelson et al., 2017",140805_14_UWcp14_50C_5,UW,25/90,6,0.542,0.00478966,48,0.77
+"Kelson et al., 2017",140727_1_UWcp14_50C_3,UW,25/90,3,0.555,0.01791445,49,0.12
+"Kelson et al., 2017",141121_6_UWcp14_50C_CA_9,UW,25/90,3,0.539,0.00658058,49,0.53
+"Kelson et al., 2017",141117_3_50C_CA_10,UW,25/90,3,0.529,0.01320287,50,0.74
+"Kluge et al., 2015",1-23C-NoSalt,ImperialCollegeLondon,70/90,3,0.612,0.00312654,23.5,0.5
+"Kluge et al., 2015",R125C,ImperialCollegeLondon,70/90,4,0.616,0.01283566,25,2
+"Kluge et al., 2015",2-25C-NoSalt,ImperialCollegeLondon,70/90,3,0.611,0.0106277,25.7,0.5
+"Kluge et al., 2015",3-37C-NoSalt,ImperialCollegeLondon,70/90,1,0.526,0,37.5,0.5
+"Kluge et al., 2015",5-50C-NoSalt,ImperialCollegeLondon,70/90,2,0.528,0.01299,49.6,0.5
+"Kluge et al., 2015",R250C,ImperialCollegeLondon,70/90,5,0.536,0.01213865,50,2
+"Lucarelli et al., 2022A",8.3 - 5C,UCLATripati,70/90,5,0.655,0.006,10,0.5
+"Lucarelli et al., 2022A",8.3 - 10 C,UCLATripati,70/90,9,0.634,0.005,15,0.5
+"Lucarelli et al., 2022A",8.3 - 15 C,UCLATripati,70/90,10,0.629,0.006,25,0.5
+"Lucarelli et al., 2022A",8.3 - 25 C,UCLATripati,70/90,12,0.591,0.01,25,0.5
+"Swart et al., 2021",5,Miami,90,13,0.66,0.006,5,0.5
+"Swart et al., 2021",10,Miami,90,10,0.634,0.008,10,0.5
+"Swart et al., 2021",15,Miami,90,14,0.628,0.01,15,0.5
+"Swart et al., 2021",25,Miami,90,13,0.603,0.005,25,0.5
+"Swart et al., 2021",30,Miami,90,9,0.577,0.008,30,0.5
+"Swart et al., 2021",35,Miami,90,14,0.563,0.009,35,0.5
+"Swart et al., 2021",C26,Tulane,90,3,0.641,0.002,5,0.5
+"Tang et al., 2014",C18,Tulane,100,3,0.633,0.023,5,0.5
+"Tang et al., 2014",C27,Tulane,90,3,0.628,0.013,5,0.5
+"Tang et al., 2014",C50,Tulane,90,2,0.671,0.01,5,0.5
+"Tang et al., 2014",C48,Tulane,90,1,0.631,0.0077,5,0.5
+"Tang et al., 2014",C19,Tulane,100,2,0.614,0.005,5,0.5
+"Tang et al., 2014",C22,Tulane,90,2,0.677,0.004325,5,0.5
+"Tang et al., 2014",C24,Tulane,90,2,0.649,0.00067,5,0.5
+"Tang et al., 2014",C22,UCLATripati,90,2,0.661,0.003,5,0.5
+"Tang et al., 2014",C24,UCLATripati,90,3,0.684,0.01,5,0.5
+"Tang et al., 2014",C26,UCLATripati,90,1,0.676,0.007,5,0.5
+"Tang et al., 2014",C27,UCLATripati,90,5,0.675,0.007,5,0.5
+"Tang et al., 2014",C48,UCLATripati,90,3,0.667,0.004,5,0.5
+"Tang et al., 2014",C49,UCLATripati,90,4,0.66,0.006,5,0.5
+"Tang et al., 2014",C49 70C,UCLATripati,90,24,0.655,0.005,5,0.5
+"Tang et al., 2014",C50,UCLATripati,90,3,0.667,0.004,5,0.5
+"Tang et al., 2014",C30,Tulane,100,5,0.585,0.02424687,25,0.5
+"Tang et al., 2014",C54,Tulane,100,3,0.565,0.01447923,25,0.5
+"Tang et al., 2014",C57,Tulane,100,2,0.553,0.00468,25,0.5
+"Tang et al., 2014",C58,Tulane,90,3,0.595,0.0077635,25,0.5
+"Tang et al., 2014",C29,Tulane,100,3,0.565,0.00629987,25,0.5
+"Tang et al., 2014",C32,Tulane,90,2,0.59,0.00746,25,0.5
+"Tang et al., 2014",C34,Tulane,90,3,0.558,0.00619137,25,0.5
+"Tang et al., 2014",C52,UCLATripati,90,3,0.598,0.002,25,0.5
+"Tang et al., 2014",C6,Tulane,100,2,0.528,0.04732,40,0.5
+"Tang et al., 2014",C7,Tulane,100,2,0.59,0.057065,40,0.5
+"Tang et al., 2014",C15,Tulane,100,2,0.51,0.03027,40,0.5
+"Tang et al., 2014",C45,Tulane,100,2,0.537,0.060515,40,0.5
+"Tang et al., 2014",C44,Tulane,100,1,0.587,0,40,0.5
+"Tang et al., 2014",C12,Tulane,100,3,0.521,0.01391157,40,0.5
+"Tang et al., 2014",C9,Tulane,100,1,0.515,0,40,0.5
+"Tang et al., 2014",C10,UCLATripati,90,1,0.563,0.006,40,0.5
+"Tripati et al., 2015",25 hdi-1-2,Caltech,90,1,0.614,0.008,25,0.5
+"Tripati et al., 2015",25 evaps,Caltech,90,4,0.599,0.003,25,0.5
+"Tripati et al., 2015",NL_UCLA_10,Caltech,90,1,0.602,0.014,27,0.5
+"Tripati et al., 2015",NL_18,Caltech,90,1,0.611,0.024,30,0.5
+"Tripati et al., 2015",NL_1112,Caltech,90,2,0.56,0.013,40,0.5
+"Tripati et al., 2015",NL_353637,Caltech,90,3,0.56,0.016,40,0.5
+"Tripati et al., 2015",NL_UCLA_4,Caltech,90,1,0.526,0.006,50,0.5
+this study,5C',UCLATripati,70,6,0.652,0.008,5,0.5
+this study,10C',UCLATripati,70,6,0.607,0.006,10,0.5
+this study,25C',UCLATripati,70,13,0.599,0.006,25,0.5
+this study,UCLA Tank 1 25 C',UCLATripati,70,8,0.606,0.009,25,0.5
+this study,UCLA Tank 2 25C',UCLATripati,70,7,0.576,0.004,25,0.5
+this study,UCLA Tank 3 25C',UCLATripati,70,6,0.591,0.018,25,0.5
+this study,UCLA Tank 4 25C',UCLATripati,70,11,0.598,0.01,25,0.5
+this study,40C',UCLATripati,70,10,0.551,0.007,40,1
+this study,40 C Tank 2',UCLATripati,70,8,0.556,0.011,40,1
+this study,40 C Tank 3',UCLATripati,70,6,0.561,0.008,40,1
+this study,40 C Tank 4',UCLATripati,70,8,0.543,0.006,40,1
