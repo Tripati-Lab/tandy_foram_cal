@@ -1,3 +1,6 @@
+library("readxl")
+d <- read_excel("forregressiontest.xlsx")
+
 #remove unused lines from dataframe
 d <- d[!is.na(d$Dataset),]
 
