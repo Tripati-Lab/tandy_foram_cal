@@ -4,8 +4,8 @@
 
 library("readxl")
 
-forregressiontest <- read_excel("forregressiontest.xlsx")
-andersondata <- read_excel("andersondata.xlsx")
+forregressiontest <- read_excel(here("data", "forregressiontest.xlsx"))
+andersondata <- read_excel(here("data", "andersondata.xlsx"))
 
 d <- (forregressiontest)
 

@@ -1,8 +1,13 @@
-library("readxl")
+library(readxl)
+library(here)
+
+############################################################
+#Script focused on comparing groups based on Figs 3 and 4###
+############################################################
 
 #Read in datasets
-forregressiontest <- read_excel("forregressiontest.xlsx")
-s4 <- read.csv("Table S4.csv") #synthetic
+forregressiontest <- read_excel(here("data", "forregressiontest.xlsx"))
+s4 <- read.csv(here("data", "Table S4.csv"))
 
 #Rename columns in S4
 colnames(s4)[6] <- "D47ICDES"
