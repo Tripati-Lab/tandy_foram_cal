@@ -1,6 +1,12 @@
 #before loading in datafile rename headers with symbols or long ones so they are easier to call, for names used see below
 #load in files by importing foram dataset and anderson datasets
 #renaming loaded foram file for easier call
+
+library("readxl")
+
+forregressiontest <- read_excel("forregressiontest.xlsx")
+andersondata <- read_excel("andersondata.xlsx")
+
 d <- (forregressiontest)
 
 #anderson data temperature into T^2
