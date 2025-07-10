@@ -7,7 +7,7 @@ library(deming)
 ############################################################
 
 # Read in datasets
-forregressiontest <- read_excel(here("data", "forregressiontest.xlsx"))
+d <- read_excel(here("data", "forregressiontest_meinicke_piaseckiETHchange_latest.xlsx"))
 s4 <- read.csv(here("data", "Table S4.csv"))
 
 ## Rename columns in S4
@@ -32,9 +32,9 @@ allforams <- rbind(UCLA, ben, plan, mixplan, mixben, epiben, infraben)
 ## Create a list with all the datasets
 data_list <- list(UCLA = UCLA, 
                   ben = ben, 
-                  #plan = plan, #Some missing data?? Negative errors?
+                  plan = plan,
                   mixplan = mixplan, 
-                  #mixben = mixben, #Some missing data?? Negative errors?
+                  mixben = mixben,
                   epiben = epiben,
                   infraben = infraben,
                   allforams = allforams
