@@ -15,6 +15,7 @@ mt$Material <- 1
 
 #Check with a simple regression
 lm(mt$D47 ~ mt$Temperature)
+plot(mt$D47 ~ mt$Temperature)
 
 
 #With the ion (no error on ion)
