@@ -50,3 +50,18 @@ regmodel
 # beta[1]       0.04    0.00 0.00   0.03   0.03   0.04   0.04   0.04   871    1
 # sigma         0.01    0.00 0.00   0.01   0.01   0.01   0.01   0.02   833    1
 
+
+# Perform reconstructions using the model that ignores ion error
+rec <- read_excel(here("data", "Test 1 - All benthics, epifaunal and infaunal.xlsx"), sheet = 2)
+
+colnames(rec)[3] <- "D47error"
+colnames(rec)[4] <- "Ion"
+colnames(rec)[5] <- "IonError"
+
+
+PredsBay <- rec.ion.bayesian(calModel = ionmodel[[1]],
+                             recData = rec,
+                             iter = 1000,
+                             postcalsamples = 100, MC = FALSE)
+
+
