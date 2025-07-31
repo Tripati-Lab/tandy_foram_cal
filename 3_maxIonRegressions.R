@@ -64,4 +64,7 @@ PredsBay <- rec.ion.bayesian(calModel = ionmodel[[1]],
                              iter = 1000,
                              postcalsamples = 100, MC = FALSE)
 
+write.csv(PredsBay, here("data", "reconstructions_ion.csv"))
+
+
 
