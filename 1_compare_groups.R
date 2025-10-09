@@ -112,6 +112,10 @@ colors <- c("grey", "red", "blue", "purple")
 image_matrix <- diff_matrix
 image_matrix[upper.tri(image_matrix, diag = TRUE)] <- NA  # remove upper triangle
 
+colnames(image_matrix) <- c("All forams", "Benthics", "Benthic epifaunal", 
+                            "Infaunal benthic", "Mixed benthics", "Mixed planktics",
+                            "Planktics", "This study")
+
 ## Plot heatmap
 pdf(here("results", "heatmap.pdf"))
 image(1:n, 1:n, t(image_matrix)[, n:1],
