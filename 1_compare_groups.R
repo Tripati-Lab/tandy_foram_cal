@@ -112,18 +112,18 @@ colors <- c("grey", "red", "blue", "purple")
 image_matrix <- diff_matrix
 image_matrix[upper.tri(image_matrix, diag = TRUE)] <- NA  # remove upper triangle
 
-colnames(image_matrix) <- c("All forams", "Benthics", "Benthic epifaunal", 
+groups2 <- c("All forams", "Benthics", "Benthic epifaunal", 
                             "Infaunal benthic", "Mixed benthics", "Mixed planktics",
                             "Planktics", "This study")
 
 ## Plot heatmap
-pdf(here("results", "heatmap.pdf"))
+pdf(here("results", "heatmap.pdf"), 5, 5)
 image(1:n, 1:n, t(image_matrix)[, n:1],
       col = colors, zlim = c(0, 3), 
       axes = FALSE, xlab = "", 
       ylab = "", main = "Pairwise differences")
-axis(1, at = 1:n, labels = groups, las = 2)
-axis(2, at = 1:n, labels = rev(groups), las = 2)
+axis(1, at = 1:n, labels = groups2, las = 2, cex.axis = 0.45)
+axis(2, at = 1:n, labels = rev(groups2), las = 2, cex.axis = 0.45)
 legend("topright",
        legend = c("No difference", "Slope only", "Intercept only", "Both"),
        fill = colors, cex = 0.8)

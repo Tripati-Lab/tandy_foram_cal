@@ -108,7 +108,7 @@ pred_interval_stats <- lapply(seq_along(fit_list), function(i) {
 summary_table <- do.call(rbind, pred_interval_stats)
 rownames(summary_table) <- NULL
 
-write.csv(summary_table, here("results", "Deming_PI_Table3.csv"))
+write.csv(summary_table[,c(1,6,7)], here("results", "Deming_PI_Table3.csv"))
 
 
 
