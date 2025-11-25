@@ -1,0 +1,150 @@
+---
+title: "regressions"
+format: pdf
+editor: visual
+---
+
+Load libraries
+```{r}
+library(readxl)
+library(here)
+library(bayclumpr)
+```
+
+# Test 1 
+
+## Calibration
+
+```{r}
+Table1 <- read_excel(here("data", "Test 1.xlsx"))
+Table1$Material <- rep(1, nrow(Table1))
+colnames(Table1)[c(5, 6, 2, 3, 8)] <- c("D47", "D47error", "Temperature", "TempError", "Ion")
+
+# Check basic regression model
+lm(Table1$D47 ~ Table1$Temperature)
+
+# Fit Bayesian regression
+ionmodel <- cal.ion.bayesian(calibrationData = Table1, 
+                             IonError = Table1$`Ion error`[1])
+parameters <- data.frame(rstan::summary(ionmodel[[1]])$summary)
+parameters
+```
+
+
+## Reconstructions
+
+```{r}
+ionRec <- read.csv(here("data", "reconstructions_ion.csv"))
+PredsBay <- rec.bayesian(calModel = ionmodel[[1]],
+                             recData = ionRec,
+                             iter = 1000,
+                             postcalsamples = 100, MC = FALSE)
+
+PredsBay
+```
+
+
+
+# Test 2
+
+## Calibration
+
+```{r}
+Table1 <- read_excel(here("data", "Test 2.xlsx"))
+Table1$Material <- rep(1, nrow(Table1))
+colnames(Table1)[c(5, 6, 2, 3, 8)] <- c("D47", "D47error", "Temperature", "TempError", "Ion")
+
+# Check basic regression model
+lm(Table1$D47 ~ Table1$Temperature)
+
+# Fit Bayesian regression
+ionmodel <- cal.ion.bayesian(calibrationData = Table1, 
+                             IonError = Table1$`Ion error`[1])
+parameters <- data.frame(rstan::summary(ionmodel[[1]])$summary)
+parameters
+```
+
+
+## Reconstructions
+
+```{r}
+ionRec <- read.csv(here("data", "reconstructions_ion.csv"))
+PredsBay <- rec.bayesian(calModel = ionmodel[[1]],
+                             recData = ionRec,
+                             iter = 1000,
+                             postcalsamples = 100, MC = FALSE)
+
+PredsBay
+```
+
+
+
+
+# Test 3
+
+## Calibration
+
+```{r}
+Table1 <- read_excel(here("data", "Test 3.xlsx"))
+Table1$Material <- rep(1, nrow(Table1))
+colnames(Table1)[c(5, 6, 2, 3, 8)] <- c("D47", "D47error", "Temperature", "TempError", "Ion")
+
+# Check basic regression model
+lm(Table1$D47 ~ Table1$Temperature)
+
+# Fit Bayesian regression
+ionmodel <- cal.ion.bayesian(calibrationData = Table1, 
+                             IonError = Table1$`Ion error`[1])
+parameters <- data.frame(rstan::summary(ionmodel[[1]])$summary)
+parameters
+```
+
+
+## Reconstructions
+
+```{r}
+ionRec <- read.csv(here("data", "reconstructions_ion.csv"))
+PredsBay <- rec.bayesian(calModel = ionmodel[[1]],
+                             recData = ionRec,
+                             iter = 1000,
+                             postcalsamples = 100, MC = FALSE)
+
+PredsBay
+```
+
+
+
+# Test 4
+
+## Calibration
+
+```{r}
+Table1 <- read_excel(here("data", "Test 4.xlsx"))
+Table1$Material <- rep(1, nrow(Table1))
+colnames(Table1)[c(5, 6, 2, 3, 8)] <- c("D47", "D47error", "Temperature", "TempError", "Ion")
+
+# Check basic regression model
+lm(Table1$D47 ~ Table1$Temperature)
+
+# Fit Bayesian regression
+ionmodel <- cal.ion.bayesian(calibrationData = Table1, 
+                             IonError = Table1$`Ion error`[1])
+parameters <- data.frame(rstan::summary(ionmodel[[1]])$summary)
+parameters
+```
+
+
+## Reconstructions
+
+```{r}
+ionRec <- read.csv(here("data", "reconstructions_ion.csv"))
+PredsBay <- rec.bayesian(calModel = ionmodel[[1]],
+                             recData = ionRec,
+                             iter = 1000,
+                             postcalsamples = 100, MC = FALSE)
+
+PredsBay
+```
+
+
+
