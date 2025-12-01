@@ -1,21 +1,37 @@
 ---
-title: "regressions"
-format: pdf
-editor: visual
+title: "Bayesian regressions - Foram paper"
+format: 
+  html:
+    self-contained: true
 ---
 
 Load libraries
 ```{r}
+#| message: false
+#| warning: false
 library(readxl)
 library(here)
 library(bayclumpr)
+library(DT)
 ```
+
+Below, I provide the analyses for 4 calibration datasets and 2 reconstruction datasets.
+
+Test 1: All benthics
+Test 2: Infaunal + epifaunal (=all benthics-MB)
+Test 3: infaunal
+Test 4: epifaunal
+
+Reconstruction A (1): Meckler
+Reconstruction B (2): EOT
 
 # Test 1 
 
 ## Calibration
 
 ```{r}
+#| message: false
+#| warning: false
 Table1 <- read_excel(here("data", "Test 1.xlsx"))
 Table1$Material <- rep(1, nrow(Table1))
 colnames(Table1)[c(5, 6, 2, 3, 8)] <- c("D47", "D47error", "Temperature", "TempError", "Ion")
@@ -27,29 +43,92 @@ lm(Table1$D47 ~ Table1$Temperature)
 ionmodel <- cal.ion.bayesian(calibrationData = Table1, 
                              IonError = Table1$`Ion error`[1])
 parameters <- data.frame(rstan::summary(ionmodel[[1]])$summary)
-parameters
+
+DT::datatable(
+    parameters,
+    extensions = c('Buttons', 'Scroller'),
+    options = list(
+        dom = 'Bfrtip',
+        buttons = list(
+            list(
+                extend = 'collection',
+                buttons = c('csv', 'excel', 'pdf'),
+                text = 'Download'
+            )
+        )
+    )
+)
 ```
 
 
-## Reconstructions
+## Reconstruction 1
 
 ```{r}
-ionRec <- read.csv(here("data", "reconstructions_ion.csv"))
-PredsBay <- rec.bayesian(calModel = ionmodel[[1]],
+#| message: false
+#| warning: false
+ionRec <- read_excel(here("data", "Test 1.xlsx"), sheet = 2)
+colnames(ionRec)[2:5] <- c("D47", "D47error", "Ion", "Ionerror")
+
+PredsBay <- rec.ion.bayesian(calModel = ionmodel[[1]],
                              recData = ionRec,
                              iter = 1000,
                              postcalsamples = 100, MC = FALSE)
 
-PredsBay
+
+DT::datatable(
+    PredsBay,
+    extensions = c('Buttons', 'Scroller'),
+    options = list(
+        dom = 'Bfrtip',
+        buttons = list(
+            list(
+                extend = 'collection',
+                buttons = c('csv', 'excel', 'pdf'),
+                text = 'Download'
+            )
+        )
+    )
+)
+
 ```
 
+## Reconstruction 2
 
+```{r}
+#| message: false
+#| warning: false
+ionRec <- read_excel(here("data", "Test 1.xlsx"), sheet = 3)
+colnames(ionRec)[2:5] <- c("D47", "D47error", "Ion", "Ionerror")
+ionRec <- na.omit(ionRec)
+
+PredsBay <- rec.ion.bayesian(calModel = ionmodel[[1]],
+                             recData = ionRec,
+                             iter = 1000,
+                             postcalsamples = 100, MC = FALSE)
+
+DT::datatable(
+    PredsBay,
+    extensions = c('Buttons', 'Scroller'),
+    options = list(
+        dom = 'Bfrtip',
+        buttons = list(
+            list(
+                extend = 'collection',
+                buttons = c('csv', 'excel', 'pdf'),
+                text = 'Download'
+            )
+        )
+    )
+)
+```
 
 # Test 2
 
 ## Calibration
 
 ```{r}
+#| message: false
+#| warning: false
 Table1 <- read_excel(here("data", "Test 2.xlsx"))
 Table1$Material <- rep(1, nrow(Table1))
 colnames(Table1)[c(5, 6, 2, 3, 8)] <- c("D47", "D47error", "Temperature", "TempError", "Ion")
@@ -65,19 +144,64 @@ parameters
 ```
 
 
-## Reconstructions
+
+## Reconstruction 1
 
 ```{r}
-ionRec <- read.csv(here("data", "reconstructions_ion.csv"))
-PredsBay <- rec.bayesian(calModel = ionmodel[[1]],
+#| message: false
+#| warning: false
+ionRec <- read_excel(here("data", "Test 2.xlsx"), sheet = 2)
+colnames(ionRec)[2:5] <- c("D47", "D47error", "Ion", "Ionerror")
+ionRec <- na.omit(ionRec)
+PredsBay <- rec.ion.bayesian(calModel = ionmodel[[1]],
                              recData = ionRec,
                              iter = 1000,
                              postcalsamples = 100, MC = FALSE)
 
-PredsBay
+DT::datatable(
+    PredsBay,
+    extensions = c('Buttons', 'Scroller'),
+    options = list(
+        dom = 'Bfrtip',
+        buttons = list(
+            list(
+                extend = 'collection',
+                buttons = c('csv', 'excel', 'pdf'),
+                text = 'Download'
+            )
+        )
+    )
+)
 ```
 
+## Reconstruction 2
 
+```{r}
+#| message: false
+#| warning: false
+ionRec <- read_excel(here("data", "Test 2.xlsx"), sheet = 3)
+colnames(ionRec)[2:5] <- c("D47", "D47error", "Ion", "Ionerror")
+ionRec <- na.omit(ionRec)
+PredsBay <- rec.ion.bayesian(calModel = ionmodel[[1]],
+                             recData = ionRec,
+                             iter = 1000,
+                             postcalsamples = 100, MC = FALSE)
+
+DT::datatable(
+    PredsBay,
+    extensions = c('Buttons', 'Scroller'),
+    options = list(
+        dom = 'Bfrtip',
+        buttons = list(
+            list(
+                extend = 'collection',
+                buttons = c('csv', 'excel', 'pdf'),
+                text = 'Download'
+            )
+        )
+    )
+)
+```
 
 
 # Test 3
@@ -85,6 +209,8 @@ PredsBay
 ## Calibration
 
 ```{r}
+#| message: false
+#| warning: false
 Table1 <- read_excel(here("data", "Test 3.xlsx"))
 Table1$Material <- rep(1, nrow(Table1))
 colnames(Table1)[c(5, 6, 2, 3, 8)] <- c("D47", "D47error", "Temperature", "TempError", "Ion")
@@ -96,22 +222,80 @@ lm(Table1$D47 ~ Table1$Temperature)
 ionmodel <- cal.ion.bayesian(calibrationData = Table1, 
                              IonError = Table1$`Ion error`[1])
 parameters <- data.frame(rstan::summary(ionmodel[[1]])$summary)
-parameters
+DT::datatable(
+    parameters,
+    extensions = c('Buttons', 'Scroller'),
+    options = list(
+        dom = 'Bfrtip',
+        buttons = list(
+            list(
+                extend = 'collection',
+                buttons = c('csv', 'excel', 'pdf'),
+                text = 'Download'
+            )
+        )
+    )
+)
 ```
 
 
-## Reconstructions
+## Reconstruction 1
 
 ```{r}
-ionRec <- read.csv(here("data", "reconstructions_ion.csv"))
-PredsBay <- rec.bayesian(calModel = ionmodel[[1]],
+#| message: false
+#| warning: false
+ionRec <- read_excel(here("data", "Test 3.xlsx"), sheet = 2)
+colnames(ionRec)[2:5] <- c("D47", "D47error", "Ion", "Ionerror")
+ionRec <- na.omit(ionRec)
+PredsBay <- rec.ion.bayesian(calModel = ionmodel[[1]],
                              recData = ionRec,
                              iter = 1000,
                              postcalsamples = 100, MC = FALSE)
 
-PredsBay
+DT::datatable(
+    PredsBay,
+    extensions = c('Buttons', 'Scroller'),
+    options = list(
+        dom = 'Bfrtip',
+        buttons = list(
+            list(
+                extend = 'collection',
+                buttons = c('csv', 'excel', 'pdf'),
+                text = 'Download'
+            )
+        )
+    )
+)
 ```
 
+## Reconstruction 2
+
+```{r}
+#| message: false
+#| warning: false
+ionRec <- read_excel(here("data", "Test 3.xlsx"), sheet = 3)
+colnames(ionRec)[2:5] <- c("D47", "D47error", "Ion", "Ionerror")
+ionRec <- na.omit(ionRec)
+PredsBay <- rec.ion.bayesian(calModel = ionmodel[[1]],
+                             recData = ionRec,
+                             iter = 1000,
+                             postcalsamples = 100, MC = FALSE)
+
+DT::datatable(
+    PredsBay,
+    extensions = c('Buttons', 'Scroller'),
+    options = list(
+        dom = 'Bfrtip',
+        buttons = list(
+            list(
+                extend = 'collection',
+                buttons = c('csv', 'excel', 'pdf'),
+                text = 'Download'
+            )
+        )
+    )
+)
+```
 
 
 # Test 4
@@ -119,6 +303,8 @@ PredsBay
 ## Calibration
 
 ```{r}
+#| message: false
+#| warning: false
 Table1 <- read_excel(here("data", "Test 4.xlsx"))
 Table1$Material <- rep(1, nrow(Table1))
 colnames(Table1)[c(5, 6, 2, 3, 8)] <- c("D47", "D47error", "Temperature", "TempError", "Ion")
@@ -130,21 +316,80 @@ lm(Table1$D47 ~ Table1$Temperature)
 ionmodel <- cal.ion.bayesian(calibrationData = Table1, 
                              IonError = Table1$`Ion error`[1])
 parameters <- data.frame(rstan::summary(ionmodel[[1]])$summary)
-parameters
+DT::datatable(
+    parameters,
+    extensions = c('Buttons', 'Scroller'),
+    options = list(
+        dom = 'Bfrtip',
+        buttons = list(
+            list(
+                extend = 'collection',
+                buttons = c('csv', 'excel', 'pdf'),
+                text = 'Download'
+            )
+        )
+    )
+)
+
 ```
 
 
-## Reconstructions
+
+## Reconstruction 1
 
 ```{r}
-ionRec <- read.csv(here("data", "reconstructions_ion.csv"))
-PredsBay <- rec.bayesian(calModel = ionmodel[[1]],
+#| message: false
+#| warning: false
+ionRec <- read_excel(here("data", "Test 4.xlsx"), sheet = 2)
+colnames(ionRec)[2:5] <- c("D47", "D47error", "Ion", "Ionerror")
+ionRec <- na.omit(ionRec)
+PredsBay <- rec.ion.bayesian(calModel = ionmodel[[1]],
                              recData = ionRec,
                              iter = 1000,
                              postcalsamples = 100, MC = FALSE)
 
-PredsBay
+DT::datatable(
+    PredsBay,
+    extensions = c('Buttons', 'Scroller'),
+    options = list(
+        dom = 'Bfrtip',
+        buttons = list(
+            list(
+                extend = 'collection',
+                buttons = c('csv', 'excel', 'pdf'),
+                text = 'Download'
+            )
+        )
+    )
+)
 ```
 
+## Reconstruction 2
 
+```{r}
+#| message: false
+#| warning: false
+ionRec <- read_excel(here("data", "Test 4.xlsx"), sheet = 3)
+colnames(ionRec)[2:5] <- c("D47", "D47error", "Ion", "Ionerror")
+ionRec <- na.omit(ionRec)
+PredsBay <- rec.ion.bayesian(calModel = ionmodel[[1]],
+                             recData = ionRec,
+                             iter = 1000,
+                             postcalsamples = 100, MC = FALSE)
+
+DT::datatable(
+    PredsBay,
+    extensions = c('Buttons', 'Scroller'),
+    options = list(
+        dom = 'Bfrtip',
+        buttons = list(
+            list(
+                extend = 'collection',
+                buttons = c('csv', 'excel', 'pdf'),
+                text = 'Download'
+            )
+        )
+    )
+)
+```
 
